@@ -5,20 +5,21 @@ public class BinarySearch {
     // and returns the index at which the target is found, or -1 if
     public static int binarySearch(int[] elements, int target) {
         // int loopCounter = 0; // for testing
-        // int leftIdx =    // TODO: assign this initial value
-        // int rightIdx =   // TODO: assign this initial value
+        int leftIdx = 0; 
+        int rightIdx = elements.length-1; 
 
-        // while (    ) {  // TODO: determine this condition (hint: see slides 61-63)
+        while (leftIdx<=rightIdx) {  
         //     loopCounter++; // for testing
         //     System.out.print(loopCounter + " "); // for testing
-        //     int middleIdx =   // TODO: determine what this should be
+        int middleIdx = ((rightIdx-leftIdx)/2)+leftIdx;  
+        if (elements[middleIdx]==target) {return middleIdx;}
+        if (elements[middleIdx] < target)
+            leftIdx = middleIdx + 1;
 
-        //     // TODO: write the rest of the code to compare middleIdx to the target
-        //     //  and adjust leftIdx and rightIdx as appropriate (see slides if needed)
+        else
+            rightIdx = middleIdx - 1;
 
-
-
-        // }
+        }
         return -1; // not found
     }
 }
